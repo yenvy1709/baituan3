@@ -1,6 +1,8 @@
 package Book.DoanThiYenVy.entity;
 
 import Book.DoanThiYenVy.validator.annotation.ValidCategoryId;
+import Book.DoanThiYenVy.validator.annotation.ValidUserId;
+import Book.DoanThiYenVy.validator.annotation.ValidUsername;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.Getter;
@@ -32,4 +34,9 @@ public class Book {
     @JoinColumn(name = "category_id")
     @ValidCategoryId
     private Category category;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    @ValidUserId
+    private User user;
 }
