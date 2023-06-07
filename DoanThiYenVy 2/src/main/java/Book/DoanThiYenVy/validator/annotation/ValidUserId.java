@@ -15,6 +15,7 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 @Target({TYPE, FIELD})
 @Retention(RUNTIME)
 @Constraint(validatedBy = ValidUserIdValidator.class)
+
 @Documented
 public @interface ValidUserId {
     String massage() default "Invalid User ID";
